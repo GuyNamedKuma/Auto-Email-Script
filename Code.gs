@@ -8,13 +8,13 @@ function sendOutreachEmailsSelfHealing() {
   var emailsSentThisRun = 0;
   var maxEmailsPerRun = 50; 
   
-  // We will write "Sent" in Column 50 (Column AX) so it stays far away from your shattered text
-  var statusColumnIndex = 50; 
+  // write "Sent" in Column 14 so it stays far away from your shattered text
+  var statusColumnIndex = 14; 
   
   for (var i = 0; i < data.length; i++) {
     var row = data[i];
     
-    // Sweep up all the broken cells and FORCE it to be a string
+    // all the broken cells and FORCE it to be a string
     var fullRowText = String(row.join(","));
     
     if (emailsSentThisRun >= maxEmailsPerRun) {
